@@ -9,9 +9,13 @@ export default function Home() {
 
   function onClick() {
     if (treeCount < 10) {
-      setTreeCount((prev) => prev + 1);
+      setTreeCount((prev) => Number(prev) + 1);
     }
   }
+
+  const handleSliderChange = (e) => {
+    setTreeCount(e.target.value);
+  };
 
   return (
     <div className="flex flex-col text-center items-center justify-center w-full mt-6">
@@ -27,8 +31,74 @@ export default function Home() {
         donation!
       </p>
       <div className="bg-[#FFFFFF99] relative z-20 mt-[64px] w-[453px] rounded-[20px]  border-white border-2 shadow-[0px_32px_28px_0px_#E4E4E433]">
-        <div className="h-[172px] px-10 py-9 border-b-2 border-b-white flex items-center justify-center">
+        <div className="h-[172px] px-10 py-9 border-b-2 flex-col border-b-white flex items-center justify-between">
           <h3 className="text-[#202225] font-medium text-[28px] ">Choose</h3>
+          <div className="relative w-full">
+            <input
+              type="range"
+              min="1"
+              max="10"
+              value={treeCount}
+              onChange={handleSliderChange}
+              className="w-full h-[24px] rounded-[12px] appearance-none cursor-pointer shadow-[0px_0px_6px_0px_#0000001F_inset]"
+              style={{
+                background: `linear-gradient(to right, #36BD79 0%, #36BD79 ${
+                  (treeCount - 1) * 11.11
+                }%, #F5F6F7 ${(treeCount - 1) * 11.11}%, #F5F6F7 100%)`,
+                WebkitAppearance: "none",
+                MozAppearance: "none",
+                outline: "none",
+              }}
+            />
+
+            {/* Tick Marks */}
+            <div className="absolute top-1/2 left-[19px] w-[calc(100%-38px)] h-[12px] flex justify-between items-center transform -translate-y-[72%] z-0">
+              {[...Array(10)].map((_, index) => (
+                <div key={index} className="relative w-[2px] h-[12px]">
+                  <div
+                    className={`w-[2px] h-full rounded-[1px] ${
+                      treeCount > index + 1
+                        ? "bg-gradient-to-t from-[#36BD79] to-[#37A16C]"
+                        : "bg-[#BCBEC2]"
+                    }`}
+                  ></div>
+                </div>
+              ))}
+            </div>
+
+            <style jsx>{`
+              input[type="range"]::-webkit-slider-thumb {
+                width: 40px;
+                height: 40px;
+                background-color: white;
+                border-radius: 50%;
+                border: 12px solid #37a16c;
+                position: relative;
+                cursor: pointer;
+                appearance: none;
+                margin-top: -8px; /* Adjusted to position thumb above track */
+                z-index: 10; /* Ensures thumb is above the track */
+              }
+
+              input[type="range"]::-moz-range-thumb {
+                width: 40px;
+                height: 40px;
+                background-color: #36bd79;
+                border-radius: 50%;
+                border: 5px solid white;
+                cursor: pointer;
+                z-index: 10;
+              }
+
+              input[type="range"]::-webkit-slider-runnable-track,
+              input[type="range"]::-moz-range-track {
+                width: 100%;
+                height: 24px;
+                background: none;
+                border-radius: 12px;
+              }
+            `}</style>
+          </div>
         </div>
         <div className="h-[134px] px-10 py-9 flex items-center justify-between">
           <div className="flex text-[#202225] leading-10 font-semibold text-[32px] gap-2">
@@ -104,7 +174,7 @@ export default function Home() {
               {" "}
               =
             </span>
-            <div>$10</div>
+            <div>${treeCount * 10}</div>
           </div>
           <button
             onClick={onClick}

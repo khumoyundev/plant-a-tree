@@ -53,6 +53,31 @@ function Mountains({ treeCount }) {
     1: "#C26B01",
   };
 
+  const objEarth3 = {
+    10: "#E9E674",
+    9: "#EBDF67",
+    8: "#EDD85A",
+    7: "#EED14D",
+    6: "#F0CA40",
+    5: "#F2C234",
+    4: "#F4BB27",
+    3: "#F5B41A",
+    2: "#F7AD0D",
+    1: "#F9A600",
+  };
+  const objEarth4 = {
+    10: "#E3E05A",
+    9: "##E7D34A",
+    8: "#E8CC43",
+    7: "#EAC53B",
+    6: "#ECBF33",
+    5: "#EEB82B",
+    4: "#F0B223",
+    3: "#F2AB1B",
+    2: "#F3A414",
+    1: "#F79704",
+  };
+
   return (
     <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-fit">
       <svg
@@ -134,13 +159,13 @@ function Mountains({ treeCount }) {
               fill-rule="evenodd"
               clip-rule="evenodd"
               d="M1220.72 512.723V730.295H-65.3364V428.612C-16.7336 427.857 32.5849 427.467 82.5045 427.467C546.559 427.467 958.989 460.901 1220.72 512.723Z"
-              fill="#E9E674"
+              fill={objEarth3[treeCount] || "#E9E674"}
             />
             <path
               fill-rule="evenodd"
               clip-rule="evenodd"
               d="M1255.58 525.431L1257.18 726.691L-74.9277 733.949L-77.1428 454.884C-26.8049 453.912 24.2765 453.273 75.9843 452.992C556.656 450.372 984.1 478.973 1255.58 525.431Z"
-              fill="#E3E05A"
+              fill={objEarth4[treeCount] || "#E3E05A"}
             />
 
             <g
