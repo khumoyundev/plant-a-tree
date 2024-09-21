@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import Logo from "./logo";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -21,8 +22,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[url('/images/home.png')] bg-no-repeat h-screen bg-cover`}
       >
+        <header className="mx-10 py-7 h-[96px] flex justify-between items-center border-b-2 border-b-[#EEEEEE]">
+          <Logo />
+          <button className="border border-[#FFFFFF] bg-[#EEEEEE] p-[12px_24px_12px_24px] rounded-[48px]">
+            Info
+          </button>
+        </header>
         {children}
       </body>
     </html>
