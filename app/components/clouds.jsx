@@ -2,7 +2,7 @@ import React from "react";
 
 function Clouds() {
   return (
-    <div className=" h-[480px] overflow-hidden">
+    <div className=" h-[490px] overflow-hidden">
       <svg
         width="1428"
         height="1448"
