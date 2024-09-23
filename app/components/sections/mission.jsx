@@ -12,7 +12,7 @@ function Mission() {
           community
         </p>
       </div>
-      <div className="container mt-[64px] mx-auto grid grid-cols-2 px-[32px] gap-[32px] ">
+      <div className="container mt-[64px] mx-auto flex justify-center px-[32px] gap-[32px] ">
         <div className="bg-[#08743E] max-w-[592px] rounded-[24px] h-[372px] p-[36px] text-white border-[#36BD79] flex flex-col border-solid border-2">
           <h2 className="text-4xl font-semibold mb-16"> Personal planting</h2>
           <p className="font-medium text-base mt-auto mb-8">
