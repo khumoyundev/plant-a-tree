@@ -1,16 +1,13 @@
-import localFont from "next/font/local";
 import "./globals.css";
 import Logo from "./logo";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-poppins",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata = {
@@ -20,9 +17,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${poppins.variable}`}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[url('/images/home.png')] bg-no-repeat h-screen bg-cover`}
+        className={`antialiased bg-[url('/images/home.png')] bg-no-repeat h-screen bg-cover`}
       >
         <header className="mx-10 py-7 h-[96px] flex justify-between items-center border-b-2 border-b-[#EEEEEE]">
           <Logo />
