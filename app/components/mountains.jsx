@@ -403,7 +403,7 @@ function Mountains({ treeCount }) {
             <stop offset="1" stopColor="#994F12" />
           </linearGradient>
 
-          {treeCount > 2 && (
+          {treeCount >= 2 && (
             <linearGradient
               id="paint1_linear_150_9182"
               x1="709.813"

@@ -7,6 +7,12 @@ import FlyingBird from "./components/flying-bird";
 import Tree from "./components/tree";
 import BirdAnimation from "./components/bird-animation";
 import FlockOfBirds from "./components/flock-of-birds";
+import Pledge from "./components/sections/Pledge";
+import Mission from "./components/sections/mission";
+import Pledge2 from "./components/sections/pledge-2";
+import Gallery from "./components/sections/gallery";
+import Plant from "./components/sections/plant";
+import ContactUs from "./components/sections/contact-us";
 
 export default function Home() {
   const [treeCount, setTreeCount] = useState(1);
@@ -22,7 +28,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col text-center items-center justify-center w-full mt-6">
+    <main className="flex flex-col  items-center justify-center w-full mt-6">
       <Image
         src={"/logo.png"}
         width={412}
@@ -30,13 +36,15 @@ export default function Home() {
         alt="logo"
         className="mb-5"
       />
-      <p className="text-[#787F84] font-medium text-[22px] max-w-[520px]">
+      <p className="text-[#787F84] text-center font-medium text-[22px] max-w-[520px]">
         Help save the ecosystem by planting a tree, contribute through your
         donation!
       </p>
       <div className="bg-[#FFFFFF99] relative z-20 mt-[64px] w-[453px] rounded-[20px]  border-white border-2 shadow-[0px_32px_28px_0px_#E4E4E433]">
         <div className="h-[172px] px-10 py-9 border-b-2 flex-col border-b-white flex items-center justify-between">
-          <h3 className="text-[#202225] font-medium text-[28px] ">Choose</h3>
+          <h3 className="text-[#202225] text-center font-medium text-[28px] ">
+            Choose
+          </h3>
           <div className="relative w-full">
             <input
               type="range"
@@ -98,6 +106,12 @@ export default function Home() {
         {treeCount > 1 && <FlockOfBirds />}
         <Mountains treeCount={treeCount} />
       </section>
-    </div>
+      <Pledge />
+      <Mission />
+      <Pledge2 />
+      <Gallery />
+      <Plant />
+      <ContactUs />
+    </main>
   );
 }
