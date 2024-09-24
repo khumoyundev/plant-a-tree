@@ -10,15 +10,7 @@ function Plant() {
             Where do we plant them?{" "}
           </h1>
           <p className="text-[#787F84] text-[22px] font-medium">
-            1-6000 🌳 : HUNGARY, H-4251 Nyíradony, 0426/30 <br />
-            HUNGARY, H-6500 BAJA, 0154/4 <br />
-            HUNGARY, H-6500 BAJA, 0154/5 <br />
-            HUNGARY, H-6500 BAJA, 0154/8 <br />
-            HUNGARY, H-6500 BAJA, 0154/9 <br />
-            HUNGARY, H-2051 Biatorbágy, 0192/11 <br />
-            HUNGARY, H-2051 Biatorbágy, 0193/2 <br />
-            HUNGARY, H-2051 Biatorbágy, 0194/12 <br />
-            HUNGARY, H-2051 Biatorbágy, 0194/13
+            All over Uzbekistan, and more countries to come !
           </p>
         </div>
       </div>
